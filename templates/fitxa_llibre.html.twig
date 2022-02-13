@@ -8,7 +8,7 @@
         <li><em>{{ llibre.autor }}</em></li>
         <li>{{ llibre.pagines }}</li>
     </ul>
-    <img src="{{ asset('imgs/llibre.png') }}" class="imatge"/>
+    <img src="{{ asset('imgs/'~llibre.imatge) }}" class="imatge"/>
 {% else %}
     <p>Llibre no trobat</p>
     <img src="{{ asset('imgs/not-found.png') }}" class="imatge"/>

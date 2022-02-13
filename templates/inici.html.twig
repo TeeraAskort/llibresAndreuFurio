@@ -7,5 +7,12 @@
         Projecte Symfony 2n DAW<br>
         Curs 21/22
     </p>
+
+    <ul>
+    {% for llibre in llibres %}
+        <li><a href="/llibre/{{ llibre.isbn }}">{{ llibre.titol }}</a></li>
+    {% endfor %}
+    </ul>
+
     <img src="{{ asset('imgs/llibres.png') }}" class="imatge"/>
 {% endblock %}
