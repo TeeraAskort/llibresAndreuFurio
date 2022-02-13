@@ -1,0 +1,25 @@
+body {
+  margin: 5% 10%;
+  background-color: #f2b852;
+}
+h1,
+h2,
+h3 {
+  color: #ffff66;
+  border: solid #ffff66 1px;
+}
+.imatge {
+  width: 200px;
+  margin: 10px;
+}
+
+.imatge-link {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+.link {
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+}

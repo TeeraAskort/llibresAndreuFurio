@@ -2,16 +2,17 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class IniciController
+class IniciController extends AbstractController
 {
     /**
      * @Route("/", name="inici")
      */
     public function inici()
     {
-        return new Response("Biblioteca particular");
+        return $this->render('inici.html.twig');
     }
 }

@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block title %}Llibre{% endblock %}
+{% block body %}
+<h1> Fitxa del llibre </h1>
+{% if llibre %}
+    <ul>
+        <li><strong>{{ llibre.titol }}</strong></li>
+        <li><em>{{ llibre.autor }}</em></li>
+        <li>{{ llibre.pagines }}</li>
+    </ul>
+    <img src="{{ asset('imgs/llibre.png') }}" class="imatge"/>
+{% else %}
+    <p>Llibre no trobat</p>
+    <img src="{{ asset('imgs/not-found.png') }}" class="imatge"/>
+{% endif %}
+<hr>
+<a href="/" class="link">Tornar arrere <img src="{{ asset('imgs/back.png') }}" class="imatge-link" /></a>
+{% endblock %}

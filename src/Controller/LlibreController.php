@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class LlibreController
+class LlibreController extends AbstractController
 {
     /**
      * @Route("/llibre/{isbn}", name="fitxa_llibre")
@@ -24,10 +25,7 @@ class LlibreController
                 $llibre = $book;
             }
         }
-        if ($llibre != null) {
-            return new Response("ISBN: " . $llibre['isbn'] . ", Titol: " . $llibre['titol'] . ", Autor: " . $llibre['autor'] . ", Pàgines: " . $llibre['pagines']);
-        } else {
-            return new Response("Llibre no trobat");
-        }
+
+        return $this->render('fitxa_llibre.html.twig', array('llibre' => $llibre));
     }
 }
