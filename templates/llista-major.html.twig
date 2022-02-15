@@ -1,12 +1,7 @@
 {% extends "base.html.twig" %}
-{% block title %}Biblioteca{% endblock %}
+{% block title %}Major que {{ pagines }}{% endblock %}
 {% block body %}
-    <h1> Biblioteca Personal Andreu Furió </h1>
-    <p>
-        Pàgina d'Inici<br>
-        Projecte Symfony 2n DAW<br>
-        Curs 21/22
-    </p>
+    <h1> Llibres amb un numero de pàgines major que {{ pagines }} </h1>
 
     {% if llibres %}
         <ul>
