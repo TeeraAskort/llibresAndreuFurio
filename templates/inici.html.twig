@@ -1,6 +1,11 @@
 {% extends "base.html.twig" %}
 {% block title %}Biblioteca{% endblock %}
+
 {% block body %}
+    {% block menu %}
+        <a href="/">Inici</a>
+        <a href="/llibre/nou">Nou Llibre</a>
+    {% endblock %}
     <h1> Biblioteca Personal Andreu Furió </h1>
     <p>
         Pàgina d'Inici<br>
@@ -11,7 +16,7 @@
     {% if llibres %}
         <ul>
             {% for llibre in llibres %}
-                <li><a href="/llibre/{{ llibre.isbn }}">{{ llibre.titol }}</a></li>
+                <li><a href="/llibre/{{ llibre.isbn }}">{{ llibre.titol }}</a><a style="margin-left: 10px;" href="/llibre/editar/{{ llibre.isbn }}">Modificar llibre <img   class="modificarimg" src="{{ asset('imgs/editar.png') }}" /></a></li>
             {% endfor %}
         </ul>
     {% else %}

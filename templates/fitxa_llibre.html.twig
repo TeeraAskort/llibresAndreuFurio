@@ -14,5 +14,6 @@
     <img src="{{ asset('imgs/not-found.png') }}" class="imatge"/>
 {% endif %}
 <hr>
-<a href="/" class="link">Tornar arrere <img src="{{ asset('imgs/back.png') }}" class="imatge-link" /></a>
+<a href="/" class="link">Tornar arrere <img src="{{ asset('imgs/back.png') }}" class="imatge-link" /></a> 
+<a href="/llibre/editar/{{ llibre.isbn }}">Modificar llibre <img  class="imatge-link" src="{{ asset('imgs/editar.png') }}" /></a>
 {% endblock %}
