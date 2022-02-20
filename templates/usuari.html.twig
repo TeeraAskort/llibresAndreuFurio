@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+{% block title %}Usuaris{% endblock %}
+
+{% block body %}
+    <h1>Llistat usuaris</h1>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">username</th>
+      <th scope="col">password</th>
+      <th scope="col">roles</th>
+      <th scope="col">editar</th>
+      <th scope="col">eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for usuari in usuaris %}
+    <tr>
+      <th scope="row">{{ usuari.id }}</th>
+      <td>{{ usuari.username }}</td>
+      <td>{{ usuari.password }}</td>
+      <td>{% for rol in usuari.roles %}
+          {{ rol }}
+      {% endfor %}</td>
+      <td><a href="/usuari/editar/{{ usuari.id }}"><img class="modificarimg" src="{{ asset('imgs/editar.png') }}" alt="Editar" /></a></td>
+      <td><a href="/usuari/eliminar/{{ usuari.id }}"><img class="modificarimg" src="{{ asset('imgs/delete.png') }}" alt="Eliminar"/></a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+  <a class="btn btn-primary" href="/usuari/nou">Crear usuari nou</a>
+{% endblock %}

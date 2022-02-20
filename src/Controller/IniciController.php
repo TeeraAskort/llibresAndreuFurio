@@ -19,6 +19,7 @@ class IniciController extends AbstractController
      */
     public function inici()
     {
+        $usuari = $this->getUser();
         return $this->render('inici.html.twig', array('llibres' => $this->llibres));
     }
 }

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
-{% block title %}Nou Llibre{% endblock %}
+{% block title %}Nou Usuari{% endblock %}
 {% block body %}
-    <h1>Nou Llibre</h1>
+    <h1>Nou Usuari</h1>
     {% if error %}
         <h3 style="color: red;">{{ error }}</h3>
     {% endif %}
@@ -9,10 +9,5 @@
     {{ form_start(formulari) }}
     {{ form_widget(formulari) }}
     {{ form_end(formulari) }}
-
-    {% if imatge %}
-        <h2>Imatge actual:</h2>
-        <img src="{{ asset('imgs/'~imatge) }}" />
-    {% endif %}
     
 {% endblock %}
