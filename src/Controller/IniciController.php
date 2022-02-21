@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Jenssegers\Date\Date;
 
 class IniciController extends AbstractController
 {
@@ -20,6 +21,9 @@ class IniciController extends AbstractController
     public function inici()
     {
         $usuari = $this->getUser();
-        return $this->render('inici.html.twig', array('llibres' => $this->llibres));
+        Date::setLocale('ca_ES');
+        $ara = Date::now();
+        $data = $ara->format('l, d F Y') . ", carregat a les " . $ara->format('H:i:s');
+        return $this->render('inici.html.twig', array('llibres' => $this->llibres, 'data' => $data));
     }
 }

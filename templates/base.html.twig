@@ -25,6 +25,9 @@
             {% if is_granted('ROLE_ADMIN') %}
                 <a href="/usuari">Usuaris</a>
             {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="/admin">Administració</a>
+            {% endif %}
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                 <span>Benvingut {{ app.user.username }}</span><a style="margin-left: 5px" href="/logout">Tancar sessió</a>
             {% endif %}
