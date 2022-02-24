@@ -13,7 +13,11 @@
     {% if llibres %}
         <ul>
             {% for llibre in llibres %}
-                <li><a href="/llibre/{{ llibre.isbn }}">{{ llibre.titol }}</a><a style="margin-left: 10px;" href="/llibre/editar/{{ llibre.isbn }}">Modificar llibre <img   class="modificarimg" src="{{ asset('imgs/editar.png') }}" /></a></li>
+                <li><a href="/llibre/{{ llibre.isbn }}">{{ llibre.titol }}</a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a style="margin-left: 10px;" href="/llibre/editar/{{ llibre.isbn }}">Modificar llibre <img class="modificarimg" src="{{ asset('imgs/editar.png') }}" /></a>
+                        {% endif %}
+                </li>
             {% endfor %}
         </ul>
     {% else %}
